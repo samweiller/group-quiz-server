@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
       serverResponses: responseList
     });
 
-    socket.broadcast.emit('response result', {serverResponses: responseList})
+    // socket.broadcast.emit('response result', {serverResponses: responseList})
     console.log('LOGIN EVENT');
   });
 

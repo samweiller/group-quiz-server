@@ -76,9 +76,18 @@ io.on('connection', (socket) => {
 
   socket.on('send question', (data) => {
     // addedUser = true;
+    let clearedResponses = [];
+    responseList.forEach((r) => {
+      clearedResponses.push({
+        user: r.user,
+        response: ""
+      })
+    })
+
     socket.broadcast.emit('new question', {
       qContent: data.qContent,
-      owner: data.owner
+      owner: data.owner,
+      clearedResponses: clearedResponses
     });
     console.log('new question event');
   });

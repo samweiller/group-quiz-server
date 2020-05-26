@@ -84,6 +84,8 @@ io.on('connection', (socket) => {
       })
     })
 
+    responseList = clearedResponses;
+
     socket.broadcast.emit('new question', {
       qContent: data.qContent,
       owner: data.owner,
@@ -122,6 +124,8 @@ io.on('connection', (socket) => {
         response: ""
       })
     })
+
+    responseList = clearedResponses;
 
     socket.broadcast.emit('clear content', {clearedResponses: clearedResponses})
   })

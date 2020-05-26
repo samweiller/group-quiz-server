@@ -4,7 +4,7 @@ let path = require('path');
 let randomNumber = require("random-number-csprng");
 
 let server = require('http').createServer(app);
-let io = require('socket.io')(server);
+let io = require('socket.io')(server, { wsEngine: 'ws' });
 let port = process.env.PORT || 3000;
 
 server.listen(port, () => {

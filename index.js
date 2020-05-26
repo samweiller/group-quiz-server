@@ -123,7 +123,7 @@ io.on('connection', (socket) => {
       })
     })
 
-    socket.broadcast.emit('response result', {serverResponses: clearedResponses})
+    socket.broadcast.emit('clear content', {clearedResponses: clearedResponses})
   })
 
   const doLogout = (name) => {
